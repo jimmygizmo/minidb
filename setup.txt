@@ -1,0 +1,70 @@
+
+
+Use Pyenv Virtualenv to create a virtual environment named ve.minidb
+
+The .python-version file in this project has this VE name 've.minidb' in it so this will cause Pyenv to automatically
+activate this VE when inside any directory under the directory containing the .python-version file.
+I have found this to be the best way to handle Python virtual environments and Python version matching.
+
+I used Python 3.12.4 so my Pyenv command was:
+
+> pyenv virtualenv 3.12.4 ve.minidb
+
+Then your prompt should look similar to this when inside the project:
+
+(ve.minidb) username@hostname:~/repos/minidb$
+
+
+------------------------------------------------------------------------------------
+
+Always update setuptools and pip:
+
+> pip install --upgrade setuptools
+
+> pip install --upgrade pip
+
+
+For any project that has a chance of needing to install platform-native builds for any Python libraries, I go ahead
+and install and upgrade wheel, so we now have all tools for library installs and upgrades, themselves fully upgraded.
+TODO: Update - It looks like for local installs (as with pip install .) wheel is used. So, I need to explicitly
+  confirm this a bit more and then update these comments.
+
+> pip install --upgrade pip
+
+
+------------------------------------------------------------------------------------
+
+Then install MiniDB itself, from the root of the project directory:
+
+> pip install minidb
+
+or your can:
+
+> pip install .
+
+TODO: Probably should install with -e and explain that, so folks can work on the installed lib files and see the
+  results instantly without having to re-install. The -e flag is for projects which are intended to be modified and
+  tested in place during development, so the install is done using symlinks back to the files in your project dir.
+  (Normally, the files are copied into Python's 'site' library install dirs, so your local changes would not be
+  reflected untill you re-install .. which is fine, if you like to or need to re-install after each code edit for
+  some reason, although not very efficient. Install using -e if you plan to do dev cyles of editing/testing this code.
+
+So, in fact, I will:
+
+> pip install -e .
+
+TODO: Update all of the above after doing some more dev and confirming that even new files and directories will be
+  picked up during dev without another install (not just file modifications.)
+
+
+-------------------------------------------------------------------------------------
+
+You can now run main.py
+
+You can also simply type "gizmodb" which does the same thing, treating this program as a CLI command.
+
+
+
+##
+#
+

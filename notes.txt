@@ -1,0 +1,13 @@
+
+
+(ve.minidb) bilbo@forest:~/repos/minidb$ sqlite3 minidb.db
+SQLite version 3.45.1 2024-01-30 16:01:20
+Enter ".help" for usage hints.
+
+sqlite> select * from orders;
+
+1|1|Book|2
+2|1|Pen|10
+3|2|Notebook|5
+sqlite>
+

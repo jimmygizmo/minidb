@@ -1,3 +1,10 @@
+
+.idea
+
+# This SQLite DB file is created when you run the code and should not go into the project repository.
+minidb.db
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
